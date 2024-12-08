@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Data - Simple CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>View User Data</h1>
+            <nav>
+                <a href="index.html">Add New Data</a>
+            </nav>
+        </header>
+
+        <h2>Stored User Information</h2>
+        <div id="userList">
+            <!-- User data will appear here -->
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Simple CRUD App | All Rights Reserved and made by Shreyash Srivastva</p>
+        </footer>
+    </div>
+
+    <script>
+        // Displaying users from localStorage
+        window.onload = function() {
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            const userListDiv = document.getElementById("userList");
+
+            if (users.length === 0) {
+                userListDiv.innerHTML = "<p>No data available. Add users first!</p>";
+            } else {
+                users.forEach((user, index) => {
+                    const userDiv = document.createElement("div");
+                    userDiv.classList.add("user");
+                    userDiv.innerHTML = `
+                        <p><strong>Name:</strong> ${user.name}</p>
+                        <p><strong>Age:</strong> ${user.age}</p>
+                        <p><strong>Gender:</strong> ${user.gender}</p>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        <button onclick="editUser(${index})">Edit</button>
+                        <button onclick="deleteUser(${index})">Delete</button>
+                    `;
+                    userListDiv.appendChild(userDiv);
+                });
+            }
+        };
+
+        // Edit user function
+        function editUser(index) {
+            const users = JSON.parse(localStorage.getItem("users"));
+            const user = users[index];
+            if (user) {
+                document.getElementById("name").value = user.name;
+                document.getElementById("age").value = user.age;
+                document.getElementById("gender").value = user.gender;
+                document.getElementById("email").value = user.email;
+
+                // Modify form to update user
+                document.getElementById("crudForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    users[index] = {
+                        name: document.getElementById("name").value,
+                        age: document.getElementById("age").value,
+                        gender: document.getElementById("gender").value,
+                        email: document.getElementById("email").value
+                    };
+                    localStorage.setItem("users", JSON.stringify(users));
+                    alert("User updated successfully!");
+                    window.location.reload();
+                });
+            }
+        }
+
+        // Delete user function
+        function deleteUser(index) {
+            let users = JSON.parse(localStorage.getItem("users"));
+            users.splice(index, 1);
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("User deleted successfully!");
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
