@@ -70,7 +70,7 @@ This is a minimalist CRUD (Create, Read, Update, Delete) web application that al
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE](https://github.com/shreyazh/CRUD-App/license.git) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](https://github.com/shreyazh/CRUD-App/blob/main/LICENSE) file for details.
 
 ---
 
