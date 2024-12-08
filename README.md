@@ -18,12 +18,12 @@ This is a minimalist CRUD (Create, Read, Update, Delete) web application that al
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/simple-crud-app.git
+   git clone https://github.com/shreyazh/CRUD-App/
    ```
 
 2. **Navigate to the project directory**:
    ```bash
-   cd simple-crud-app
+   cd crud-app
    ```
 
 3. **Open the `index.html` file** in your browser:
@@ -70,7 +70,7 @@ This is a minimalist CRUD (Create, Read, Update, Delete) web application that al
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](https://github.com/shreyazh/CRUD-App/license.git) file for details.
 
 ---
 
