@@ -1,5 +1,5 @@
 # The CRUD App
-[Author : Shreyash Srivastva](https://www.github.com/shreyazh)
+[Author : Shreyash Srivastva](https://www.github.com/shreyazh)<br><br>
 This is a minimalist CRUD (Create, Read, Update, Delete) web application that allows users to add, view, update, and delete user data (Name, Age, Gender, and Email). The app is built using **HTML**, **CSS**, and **JavaScript** with **localStorage** as the data storage solution.
 
 ## Features
